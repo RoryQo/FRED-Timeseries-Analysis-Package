@@ -16,6 +16,7 @@ import itertools
 import matplotlib.pyplot as plt
 import pandas as pd
 from statsmodels.tsa.statespace.sarimax import SARIMAX
+from fredapi import Fred
 
 # ----------------------------------
 # Helper Functions
@@ -34,14 +35,31 @@ def in_notebook():
 # Data Fetching and Preprocessing
 # ----------------------------------
 
-def fetch_series(series_id, start_date=None, end_date=None):
+
+
+def fetch_series(series_id, start_date=None, end_date=None, api_key=None):
     """
     Fetch a FRED series using its ID.
+
+    Args:
+        series_id (str): FRED series identifier.
+        start_date (str or datetime, optional): Start date for series.
+        end_date (str or datetime, optional): End date for series.
+        api_key (str): FRED API key (required).
+
+    Returns:
+        pandas.Series: Time series data.
     """
+    if api_key is None:
+        raise ValueError("An API key must be provided to fetch data from FRED.")
+
+    fred = Fred(api_key=api_key)
     series = fred.get_series(series_id)
     series.name = series_id
+
     if start_date or end_date:
         series = series.loc[start_date:end_date]
+
     return series
 
 def resample_series(series, freq='Q', method='ffill'):
