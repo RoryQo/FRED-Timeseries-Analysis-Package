@@ -1,5 +1,56 @@
-# FRED Timeseries Analysis Package
-  
+<h1 align="center">FRED Timeseries Analysis Package</h1>
+
+<p align="center">
+  <a href="https://pypi.org/project/fred-timeseries-toolkit/">
+    <img src="https://img.shields.io/pypi/v/fred-timeseries-toolkit?label=PyPI&logo=pypi&logoColor=white&color=blue" alt="PyPI version">
+  </a>
+</p>
+
+<table align="center">
+  <tr>
+    <td colspan="2" align="center" style="background-color: white; color: black;"><strong>Table of Contents</strong></td>
+  </tr>
+
+  <tr>
+    <td style="background-color: white; color: black; padding: 10px;">
+      1. <a href="#fred-timeseries-analysis-package" style="color: black;">Overview</a><br>
+    </td>
+    <td style="background-color: gray; color: black; padding: 10px;">
+      2. <a href="#fred-api-key-requirement" style="color: black;">FRED API Key Requirement</a><br>
+    </td>
+  </tr>
+
+  <tr>
+    <td style="background-color: gray; color: black; padding: 10px;">
+      3. <a href="#package-structure" style="color: black;">Package Structure</a><br>
+    </td>
+    <td style="background-color: white; color: black; padding: 10px;">
+      4. <a href="#techniques-and-defaults" style="color: black;">Techniques and Defaults</a><br>
+    </td>
+  </tr>
+
+  <tr>
+    <td style="background-color: white; color: black; padding: 10px;">
+      5. <a href="#function-descriptions" style="color: black;">Function Descriptions</a><br>
+    </td>
+    <td style="background-color: gray; color: black; padding: 10px;">
+      6. <a href="#summary" style="color: black;">Summary</a><br>
+      &nbsp;&nbsp;&nbsp;- <a href="#functions-and-purposes" style="color: black;">Functions and Purposes</a><br>
+      &nbsp;&nbsp;&nbsp;- <a href="#techniques-used" style="color: black;">Techniques Used</a><br>
+    </td>
+  </tr>
+
+  <tr>
+    <td style="background-color: gray; color: black; padding: 10px;">
+      7. <a href="#license" style="color: black;">License</a><br>
+    </td>
+    <td style="background-color: white; color: black; padding: 10px;">
+      8. <a href="#contributing" style="color: black;">Contributing</a><br>
+    </td>
+  </tr>
+</table>
+
+
 **FRED-Timeseries-Analysis-Package** is a Python package for fetching, analyzing, and forecasting economic time series data, built on top of [FRED](https://fred.stlouisfed.org/), `pandas`, and `statsmodels`.
 
 It includes:
