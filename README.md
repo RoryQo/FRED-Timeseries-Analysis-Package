@@ -1,3 +1,283 @@
+# FRED Timeseries Analysis Package
+
+**FRED-Timeseries-Analysis-Package** is a lightweight Python toolkit for fetching, analyzing, and forecasting economic time series data, built on top of [FRED](https://fred.stlouisfed.org/), `pandas`, and `statsmodels`.
+
+It includes:
+- Data fetching and resampling
+- Stationarity testing (ADF)
+- ARIMA and SARIMA modeling
+- Automatic model selection
+- Jupyter-optimized visualizations
+
+An example notebook is included in the `examples/` folder.
+
+## FRED API Key Requirement
+
+In order to fetch data from the FRED database, you must obtain a free FRED API key.
+
+### How to get a FRED API key:
+1. Visit the [FRED API Key Request page](https://fredaccount.stlouisfed.org/apikey).
+2. Create a free account if you do not already have one.
+3. Request an API key from your account dashboard.
+4. You will receive a personal API key that you can use in all fetch operations.
+
+### Where to use the API key:
+- The `fetch_series` function requires your FRED API key as an input.
+- Provide it once when calling `fetch_series`, and your data will load automatically.
+
+Example usage:
+
+```python
+# Example (not inside README)
+from fred_timeseries_toolkit import fetch_series
+
+fred_api_key = 'your-api-key-here'
+gdp = fetch_series('GDP', start_date='2010-01-01', api_key=fred_api_key)
+```
+---
+
+## Techniques and Defaults
+
+- **Missing Data Handling:**  
+  By default, series are cleaned using `.dropna()`. When resampling, missing periods are filled by **forward-fill (`ffill`)** unless otherwise specified.
+
+- **Frequency Handling:**  
+  Functions can **infer** time series frequency from the index or allow **manual override** (`freq` argument).
+
+- **Model Stability Checks:**  
+  Automatic model selection (ARIMA and SARIMA) rejects unstable fits (e.g., AR/MA terms near 1, singular covariance matrices).
+
+- **Plotting:**  
+  All forecasting functions plot observed + forecasted values unless `plot=False`.
+
+---
+
+#  Function Descriptions
+
+
+
+## Data Fetching and Preprocessing
+
+### `fetch_series`
+
+**Description:**  
+Fetches a single time series from the FRED database.
+
+**Inputs:**
+- `series_id` (str): The FRED series ID.
+- `start_date`, `end_date` (optional, str or datetime): Date range.
+- `api_key` (str): User’s FRED API key.
+
+**Outputs:**
+- `pandas.Series` indexed by dates.
+
+**Default behavior:**  
+Entire available series is fetched if no date range is specified.
+
+---
+
+### `resample_series`
+
+**Description:**  
+Resamples a series to a new frequency.
+
+**Inputs:**
+- `series` (pandas.Series): Input series.
+- `freq` (str): Target frequency (`'Q'`, `'M'`, `'A'`, etc.).
+- `method` (str): Fill method (`'ffill'` or `'bfill'`).
+
+**Outputs:**
+- `pandas.Series` resampled.
+
+**Default behavior:**  
+Forward-fill (`ffill`) is used for missing values.
+
+---
+
+### `log_diff`
+
+**Description:**  
+Applies log transformation and differencing to stabilize variance and mean.
+
+**Inputs:**
+- `series` (pandas.Series): Input series.
+- `periods` (int): Number of periods to difference.
+
+**Outputs:**
+- `pandas.Series` after log and differencing.
+
+**Default behavior:**  
+1-period difference.
+
+---
+
+## Stationarity Testing
+
+### `check_stationarity`
+
+**Description:**  
+Performs the Augmented Dickey-Fuller (ADF) test for stationarity.
+
+**Inputs:**
+- `series` (pandas.Series)
+- `alpha` (float): Significance level (default 0.05).
+- `regression` (str): Trend type ('c', 'ct', 'ctt', 'n').
+- `autolag` (str): Criterion for lag selection ('AIC', 'BIC').
+- `resample_freq`, `resample_method` (optional): If provided, resample before testing.
+
+**Outputs:**
+- Dictionary summarizing ADF test results.
+
+**Default behavior:**  
+Original series used without resampling. Displays formatted summary and plot.
+
+---
+
+### `check_stationarity_diff`
+
+**Description:**  
+Same as `check_stationarity` but first differences the series before applying the ADF test.
+
+**Inputs:**  
+Same as `check_stationarity`.
+
+**Outputs:**
+- Dictionary summarizing ADF test on differenced series.
+
+**Default behavior:**  
+First difference applied automatically.
+
+---
+
+## ARIMA Models
+
+### `quick_arima_forecast`
+
+**Description:**  
+Fits an ARIMA model and forecasts future periods.
+
+**Inputs:**
+- ARIMA orders (`p`, `d`, `q`).
+- `forecast_steps` (int): Number of periods ahead to forecast.
+
+**Outputs:**
+- Dictionary with model fit, forecast, AIC, BIC.
+
+**Default behavior:**  
+Forecast 5 future periods, plot results.
+
+---
+
+### `quick_arima_forecast_testing`
+
+**Description:**  
+Splits data into train/test sets, fits ARIMA, forecasts, and evaluates RMSE.
+
+**Inputs:**
+- `train_ratio` (float): Fraction of data to train on (default 0.8).
+
+**Outputs:**
+- Dictionary with model, forecast, AIC, BIC, RMSE.
+
+**Default behavior:**  
+80% train / 20% test split, forecast matching test set size.
+
+---
+
+### `auto_arima_forecast`
+
+**Description:**  
+Automatically searches ARIMA(p,d,q) models using AIC or BIC.
+
+**Inputs:**
+- Search ranges for p, d, q.
+- `ic` (str): 'aic' or 'bic'.
+
+**Outputs:**
+- Best model, best order, forecast, AIC, BIC.
+
+**Default behavior:**  
+Minimizes AIC, autoreject unstable models.
+
+---
+
+## SARIMA Models (Seasonal ARIMA)
+
+### `sarima_forecast`
+
+**Description:**  
+Manually fits SARIMA(p,d,q)x(P,D,Q,s) model.
+
+**Inputs:**
+- Non-seasonal (`p,d,q`) and seasonal (`P,D,Q,s`) orders.
+- Forecast frequency (`freq`) optional.
+
+**Outputs:**
+- Model fit, forecast, AIC, BIC.
+
+**Default behavior:**  
+No seasonality unless specified. Forecast 5 periods ahead.
+
+---
+
+### `auto_sarima_forecast`
+
+**Description:**  
+Automatically selects best SARIMA(p,d,q)x(P,D,Q,s) model.
+
+**Inputs:**
+- Search ranges for p, d, q, P, D, Q, and seasonality s.
+- `ic` (str): 'aic' or 'bic'.
+
+**Outputs:**
+- Best model fit, best order, forecast, AIC, BIC.
+
+**Default behavior:**  
+Default seasonality `s=4` (quarterly). Autoreject unstable models.
+
+---
+
+# Summary
+
+
+## Functions and Purposes
+
+| Function | Purpose |
+|:---------|:--------|
+| fetch_series | Fetch time series data from FRED |
+| resample_series | Resample to new frequency |
+| log_diff | Log-transform and difference a series |
+| check_stationarity | ADF stationarity test |
+| check_stationarity_diff | ADF test after differencing |
+| quick_arima_forecast | Fit ARIMA and forecast |
+| quick_arima_forecast_testing | ARIMA with train/test evaluation |
+| auto_arima_forecast | Auto-select ARIMA model |
+| sarima_forecast | Fit SARIMA manually |
+| auto_sarima_forecast | Auto-select SARIMA model |
+
+---
+
+## Techniques Used
+
+| Feature | Behavior |
+|:--------|:---------|
+| Missing Data | `.dropna()` at start; `resample()` uses `'ffill'` |
+| Frequency | Infer from index if not provided, or manually set |
+| Model Stability | Auto-reject AR/MA terms near unit root or singular covariance |
+| Plotting | Enabled by default, can be turned off |
+| Forecasting | Extends beyond last date, aligns future dates automatically |
+
+---
+
+## License
+
+This project is licensed under the MIT License.  
+See the `LICENSE` file for details.
+
+---
+
+
+
 # fred-timeseries-toolkit
 
 ```
