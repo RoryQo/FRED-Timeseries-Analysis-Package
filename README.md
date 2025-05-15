@@ -15,13 +15,13 @@ An example notebook is included in the `examples/` folder.
 
 In order to fetch data from the FRED database, you must obtain a free FRED API key.
 
-### How to get a FRED API key:
+**How to get a FRED API key:**
 1. Visit the [FRED API Key Request page](https://fredaccount.stlouisfed.org/apikey).
 2. Create a free account if you do not already have one.
 3. Request an API key from your account dashboard.
 4. You will receive a personal API key that you can use in all fetch operations.
 
-### Where to use the API key:
+**Where to use the API key:**
 - The `fetch_series` function requires your FRED API key as an input.
 - Provide it once when calling `fetch_series`, and your data will load automatically.
 
@@ -33,6 +33,26 @@ from fred_timeseries_toolkit import fetch_series
 
 fred_api_key = 'your-api-key-here'
 gdp = fetch_series('GDP', start_date='2010-01-01', api_key=fred_api_key)
+```
+---
+
+## Package Structure
+
+```
+timeseries_toolkit/
+│
+├── timeseries_toolkit/        <- the code folder (same name as project)
+│   ├── __init__.py             <- makes it a package
+│   ├── ts_toolkit.py         <- (check_stationarity, check_stationarity_diff)
+
+│
+├── examples/                  <- Jupyter notebooks showing usage
+│   └── basic_usage.ipynb
+│
+├── README.md                   <- describe project, functions
+├── setup.py                    <- installable package config
+├── pyproject.toml              <- (optional but modern, for packaging)
+├── requirements.txt            <- dependencies (fredapi, pandas, statsmodels, matplotlib, etc.)
 ```
 ---
 
@@ -54,9 +74,6 @@ gdp = fetch_series('GDP', start_date='2010-01-01', api_key=fred_api_key)
 
 #  Function Descriptions
 
-
-
-## Data Fetching and Preprocessing
 
 ### `fetch_series`
 
@@ -297,21 +314,4 @@ For large changes, it is recommended to open an issue first to discuss the propo
 ---
 
 
-# fred-timeseries-toolkit
 
-```
-timeseries_toolkit/
-│
-├── timeseries_toolkit/        <- the code folder (same name as project)
-│   ├── __init__.py             <- makes it a package
-│   ├── ts_toolkit.py         <- (check_stationarity, check_stationarity_diff)
-
-│
-├── examples/                  <- Jupyter notebooks showing usage
-│   └── basic_usage.ipynb
-│
-├── README.md                   <- describe project, functions
-├── setup.py                    <- installable package config
-├── pyproject.toml              <- (optional but modern, for packaging)
-├── requirements.txt            <- dependencies (fredapi, pandas, statsmodels, matplotlib, etc.)
-```
