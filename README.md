@@ -268,7 +268,7 @@ Default seasonality `s=4` (quarterly). Autoreject unstable models.
 | sarima_forecast | Fit SARIMA manually |
 | auto_sarima_forecast | Auto-select SARIMA model |
 
----
+
 
 ## Techniques Used
 
