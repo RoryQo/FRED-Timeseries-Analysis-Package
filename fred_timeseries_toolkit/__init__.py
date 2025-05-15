@@ -1,7 +1,10 @@
 # fred_timeseries_toolkit/__init__.py
 
 import warnings
-warnings.filterwarnings("ignore")
+from statsmodels.tools.sm_exceptions import ValueWarning
+
+# Suppress harmless statsmodels warnings about missing frequency
+warnings.simplefilter("ignore", ValueWarning)
 
 from .ts_toolkit import (
     in_notebook,
