@@ -128,7 +128,6 @@ Applies log transformation and differencing to stabilize variance and mean.
 
 ---
 
-## Stationarity Testing
 
 ### `check_stationarity`
 
@@ -165,8 +164,6 @@ Same as `check_stationarity`.
 First difference applied automatically.
 
 ---
-
-## ARIMA Models
 
 ### `quick_arima_forecast`
 
@@ -218,7 +215,6 @@ Minimizes AIC, autoreject unstable models.
 
 ---
 
-## SARIMA Models (Seasonal ARIMA)
 
 ### `sarima_forecast`
 
