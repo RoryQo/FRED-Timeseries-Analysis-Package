@@ -1,0 +1,26 @@
+[build-system]
+requires = ["setuptools>=61.0", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "fred-timeseries-toolkit"
+version = "0.1.0"
+description = "A toolkit for time series analysis and forecasting with FRED integration."
+readme = "README.md"
+requires-python = ">=3.7"
+license = {text = "MIT"}
+authors = [
+    {name = "Rory G. Quinlan"}
+]
+dependencies = [
+    "pandas",
+    "numpy",
+    "matplotlib",
+    "fredapi",
+    "statsmodels",
+    "IPython"
+]
+
+[project.urls]
+"Homepage" = "https://github.com/roryqo/FRED-Timeseries-Analysis-Package"
+"Repository" = "https://github.com/roryqo/FRED-Timeseries-Analysis-Package"
