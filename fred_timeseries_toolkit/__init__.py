@@ -1,5 +1,8 @@
 # fred_timeseries_toolkit/__init__.py
 
+import warnings
+warnings.filterwarnings("ignore")
+
 from .ts_toolkit import (
     in_notebook,
     fetch_series,
