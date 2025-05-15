@@ -22,33 +22,42 @@
 
   <tr>
     <td style="background-color: gray; color: black; padding: 10px;">
-      3. <a href="#package-structure" style="color: black;">Package Structure</a><br>
+      3. <a href="#installation" style="color: black;">Installation</a><br>
     </td>
     <td style="background-color: white; color: black; padding: 10px;">
-      4. <a href="#techniques-and-defaults" style="color: black;">Techniques and Defaults</a><br>
+      4. <a href="#package-structure" style="color: black;">Package Structure</a><br>
     </td>
   </tr>
 
   <tr>
     <td style="background-color: white; color: black; padding: 10px;">
-      5. <a href="#function-descriptions" style="color: black;">Function Descriptions</a><br>
+      5. <a href="#techniques-and-defaults" style="color: black;">Techniques and Defaults</a><br>
     </td>
     <td style="background-color: gray; color: black; padding: 10px;">
-      6. <a href="#summary" style="color: black;">Summary</a><br>
+      6. <a href="#function-descriptions" style="color: black;">Function Descriptions</a><br>
+  </tr>
+
+  <tr>
+    <td style="background-color: gray; color: black; padding: 10px;">
+      7. <a href="#summary" style="color: black;">Summary</a><br>
       &nbsp;&nbsp;&nbsp;- <a href="#functions-and-purposes" style="color: black;">Functions and Purposes</a><br>
       &nbsp;&nbsp;&nbsp;- <a href="#techniques-used" style="color: black;">Techniques Used</a><br>
     </td>
+    <td style="background-color: white; color: black; padding: 10px;">
+      8. <a href="#license" style="color: black;">License</a><br>
+    </td>
   </tr>
 
   <tr>
-    <td style="background-color: gray; color: black; padding: 10px;">
-      7. <a href="#license" style="color: black;">License</a><br>
-    </td>
-    <td style="background-color: white; color: black; padding: 10px;">
-      8. <a href="#contributing" style="color: black;">Contributing</a><br>
+    <td colspan="2" style="background-color: white; color: black; padding: 10px;">
+ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+      9. <a href="#contributing" style="color: black;">Contributing</a>
     </td>
   </tr>
 </table>
+
+
+
 
 
 **FRED-Timeseries-Analysis-Package** is a Python package for fetching, analyzing, and forecasting economic time series data, built on top of [FRED](https://fred.stlouisfed.org/), `pandas`, and `statsmodels`.
@@ -79,9 +88,6 @@ In order to fetch data from the FRED database, you must obtain a free FRED API k
 Example usage:
 
 ```python
-# Example (not inside README)
-from fred_timeseries_toolkit import fetch_series
-
 fred_api_key = 'your-api-key-here'
 gdp = fetch_series('GDP', start_date='2010-01-01', api_key=fred_api_key)
 ```
@@ -90,9 +96,9 @@ gdp = fetch_series('GDP', start_date='2010-01-01', api_key=fred_api_key)
 ## Package Structure
 
 ```
-timeseries_toolkit/
+FRED-Timeseries-Analysis-Package/
 │
-├── timeseries_toolkit/        <- the code folder (same name as project)
+├── timeseries_toolkit/        <- the code folder (same name as PyPI project)
 │   ├── __init__.py             <- makes it a package
 │   ├── ts_toolkit.py         <- (check_stationarity, check_stationarity_diff)
 
@@ -101,10 +107,46 @@ timeseries_toolkit/
 │   └── basic_usage.ipynb
 │
 ├── README.md                   <- describe project, functions
-├── setup.py                    <- installable package config
-├── pyproject.toml              <- (optional but modern, for packaging)
+├── pyproject.toml              <- (for packaging)
 ├── requirements.txt            <- dependencies (fredapi, pandas, statsmodels, matplotlib, etc.)
 ```
+
+---
+## Installation
+
+You can install the package directly from PyPI:
+
+```python
+pip install fred-timeseries-toolkit
+```
+Or install it from the GitHub repository:
+
+```bash
+pip install git+https://github.com/RoryQo/FRED-Timeseries-Analysis-Package.git
+```
+
+**Requirements** (automatically handled with pip install):
+
+- `fredapi`
+- `pandas`
+- `statsmodels`
+- `matplotlib`
+- `scikit-learn`
+- `numpy`
+
+Make sure you have Python 3.8 or later.
+
+
+> **Important Note:**  
+The `fredapi` package must be installed and imported separately when using this toolkit.  
+While `fredapi` is included as a dependency, users must create and manage their own `Fred` object with their FRED API key when working with the toolkit’s functions.
+
+```python
+from fredapi import Fred
+fred = Fred(api_key='your-api-key-here')
+```
+
+
 ---
 
 ## Techniques and Defaults
@@ -125,6 +167,22 @@ timeseries_toolkit/
 
 #  Function Descriptions
 
+### `Import`
+
+```python
+from fred_timeseries_toolkit.ts_toolkit import (
+    fetch_series,
+    resample_series,
+    log_diff,
+    check_stationarity,
+    check_stationarity_diff,
+    quick_arima_forecast,
+    quick_arima_forecast_testing,
+    auto_arima_forecast,
+    sarima_forecast,
+    auto_sarima_forecast)
+from fredapi import Fred
+```
 
 ### `fetch_series`
 
@@ -141,6 +199,11 @@ Fetches a single time series from the FRED database.
 
 **Default behavior:**  
 Entire available series is fetched if no date range is specified.
+
+**Reminder:**  
+This function requires that you manage your own `Fred` object separately.  
+Ensure that `fredapi` is installed and imported before fetching data.  
+See the **Installation** section for guidance on how to properly import `fredapi`.
 
 ---
 
