@@ -1,5 +1,5 @@
 # FRED Timeseries Analysis Package
- 
+  
 **FRED-Timeseries-Analysis-Package** is a Python package for fetching, analyzing, and forecasting economic time series data, built on top of [FRED](https://fred.stlouisfed.org/), `pandas`, and `statsmodels`.
 
 It includes:
