@@ -1,6 +1,6 @@
 # FRED Timeseries Analysis Package
 
-**FRED-Timeseries-Analysis-Package** is a lightweight Python toolkit for fetching, analyzing, and forecasting economic time series data, built on top of [FRED](https://fred.stlouisfed.org/), `pandas`, and `statsmodels`.
+**FRED-Timeseries-Analysis-Package** is a Python package for fetching, analyzing, and forecasting economic time series data, built on top of [FRED](https://fred.stlouisfed.org/), `pandas`, and `statsmodels`.
 
 It includes:
 - Data fetching and resampling
@@ -267,6 +267,7 @@ Default seasonality `s=4` (quarterly). Autoreject unstable models.
 | Plotting | Enabled by default, can be turned off |
 | Forecasting | Extends beyond last date, aligns future dates automatically |
 
+
 ---
 
 ## License
@@ -276,6 +277,24 @@ See the `LICENSE` file for details.
 
 ---
 
+## Contributing
+
+Contributions are welcome!
+
+If you would like to improve this package, feel free to open:
+- An Issue (for bug reports, feature requests, or clarifications)
+- A Pull Request (for proposed changes or additions)
+
+When contributing, please:
+- Keep code style clean and readable
+- Follow the organization structure (group similar functions together)
+- Include clear function descriptions (Inputs, Outputs, Purpose)
+- Update the `examples/` notebook if you add major functionality
+
+For large changes, it is recommended to open an issue first to discuss the proposed approach.
+
+
+---
 
 
 # fred-timeseries-toolkit
@@ -285,19 +304,14 @@ timeseries_toolkit/
 │
 ├── timeseries_toolkit/        <- the code folder (same name as project)
 │   ├── __init__.py             <- makes it a package
-│   ├── fetch.py                <- (fetch_series, resample_series, log_diff)
-│   ├── stationarity.py         <- (check_stationarity, check_stationarity_diff)
-│   ├── arima_models.py         <- (quick_arima_forecast, auto_arima_forecast)
-│   ├── sarima_models.py        <- (sarima_forecast, auto_sarima_forecast)
+│   ├── ts_toolkit.py         <- (check_stationarity, check_stationarity_diff)
+
 │
-├── examples/                  <- optional: Jupyter notebooks showing usage
+├── examples/                  <- Jupyter notebooks showing usage
 │   └── basic_usage.ipynb
 │
 ├── README.md                   <- describe project, functions
-├── LICENSE                     <- (MIT recommended)
 ├── setup.py                    <- installable package config
 ├── pyproject.toml              <- (optional but modern, for packaging)
 ├── requirements.txt            <- dependencies (fredapi, pandas, statsmodels, matplotlib, etc.)
-│
-└── .gitignore                  <- ignore __pycache__/, .ipynb_checkpoints/, etc.
 ```
