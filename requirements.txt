@@ -1,0 +1,6 @@
+pandas>=1.4
+numpy>=1.22
+matplotlib>=3.5
+fredapi>=0.4.3
+statsmodels>=0.13
+IPython>=8.0
