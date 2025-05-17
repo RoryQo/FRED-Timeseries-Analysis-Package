@@ -24,7 +24,6 @@ nocite: |
 
 
 # Summary
-
 The FRED Timeseries Analysis Package streamlines exploratory time series analysis by automating routine tasks, including stationarity testing, grid searching for optimal ARIMA and SARIMA models, and assessing ARIMA and SARIMA model fit. The package includes model stability checks, automatic model selection, and Jupyter-optimized outputs, ensuring it is efficient and rigorous for exploratory analysis in macroeconomic research.
 
 # Statement of need
