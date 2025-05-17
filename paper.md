@@ -23,12 +23,12 @@ nocite: |
 ---
 
 # Summary
-
-Economic time series analysis is fundamental for macroeconomic modeling, forecasting, and policy evaluation. Publicly accessible sources like the Federal Reserve Economic Data (FRED) provide a wealth of economic indicators; however, efficiently downloading, preparing, and modeling this data often requires extensive setup. The FRED Timeseries Analysis Package offers a Python-based toolkit that streamlines these tasks by automating data fetching from the FRED API, testing stationarity, and fitting ARIMA and SARIMA forecasting models with minimal code overhead. The package emphasizes model stability, automatic selection procedures, and Jupyter-optimized outputs, making it especially suited for rapid exploration and production-quality time series modeling.
+The FRED Timeseries Analysis Package offers functions that streamline exploratory time series modeling by automating stationarity testing, grid searching for optimal ARIMA and SARIMA models, and easily fitting pre-built ARIMA and SARIMA forecasting models. The package includes model stability checks, automatic model selection, and Jupyter-optimized outputs to make it exceptionally efficient for exploratory analysis in macroeconomic research.
 
 # Statement of need
 
-There are currently few lightweight packages that tightly integrate economic time series acquisition with modern Python modeling workflows. Existing general libraries such as statsmodels provide time series modeling utilities, but users must separately source, clean, and align economic datasets before beginning analysis. The FRED Timeseries Analysis Package addresses this gap by providing an integrated framework that connects directly to FRED, simplifies stationarity testing via Augmented Dickey-Fuller methods, and offers fast ARIMA and SARIMA modeling with sensible defaults. This combination enables reproducible, end-to-end forecasting pipelines without requiring custom setup scripts for every new project. The package is intended for economists, financial analysts, data scientists, and policy researchers who need fast and reproducible economic forecasts.
+Time series analysis is a key tool in macroeconomic modeling. Key macroeconomic indicators use time series analysis for forecasting and policy decisions. FRED provides publicly available data, current packages such as stats models contain time series functions, and packages such as fredapi allow users to download and interact with data from FRED easily. Given the emphasis on time series modeling for macroeconomics, a package that conveniently combines this functionality and automates it can save researchers time and embed reproducibility using these standard functions.
+
 
 # Acknowledgments
 
