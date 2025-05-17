@@ -32,8 +32,7 @@ Time series analysis is a key tool in macroeconomic modeling. Key macroeconomic 
 
 # Acknowledgments
 
-This project was completed during master's degree studies at the University of Pittsburgh. We thank Editage (https://editage.com) for English language editing support and acknowledge the university faculty for their support and instruction throughout the program.
-
+We thank Editage (https://editage.com) for English language editing support.
 \clearpage
 
 # References
