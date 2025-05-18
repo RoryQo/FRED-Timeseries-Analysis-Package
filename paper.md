@@ -24,11 +24,12 @@ nocite: |
 
 
 # Summary
-The FRED Timeseries Analysis Package streamlines exploratory time series analysis by automating routine tasks, including stationarity testing, grid searching for optimal ARIMA and SARIMA models, and assessing ARIMA and SARIMA model fit. The package includes model stability checks, automatic model selection, and Jupyter-optimized outputs, ensuring it is efficient and rigorous for exploratory analysis in macroeconomic research.
+
+The Federal Reserve Economic Data (FRED)  Timeseries Analysis Package streamlines exploratory time- series analysis by automating routine tasks, including stationarity testing, grid searching for optimal ARIMA and SARIMA models, and assessing the ARIMA and SARIMA model fit. This package includes model stability checks, automatic model selection, and Jupyter-optimized outputs, ensuring its efficiency and rigor  for exploratory analyses in macroeconomic research.
 
 # Statement of need
 
-Time series analysis is fundamental in macroeconomic research. The Federal Reserve Economic Data (FRED) provides publicly available macroeconomic indicators via its API. While current packages, such as StatsModels, contain time series functions, and the Fredapi package allows users to download and interact with data from FRED easily, the Fred Timeseries Analysis package goes a step further. It integrates and automates these two components. By streamlining exploratory time series tasks such as stationarity testing, model selection, and simple forecasting, this package supports macroeconomic researchers by reducing the time spent on routine tasks and adjusting workflows for reproducibility.
+Time-series analyses are fundamental to macroeconomic research. FRED provides publicly available macroeconomic indicators through its API. While current packages, such as StatsModels, contain time-series functions, and the Fredapi  package allows users to download and interact with data from FRED easily, the FRED Timeseries Analysis package goes a step further by integrating and automating  the two components. By streamlining exploratory time-series tasks, such as stationarity testing, model selection, and basic forecasting, this package helps macroeconomic researchers save time on routine tasks and enhance workflow reproducibility.
 
 # Acknowledgments
 
