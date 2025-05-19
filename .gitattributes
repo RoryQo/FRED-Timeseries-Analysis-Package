@@ -1,0 +1,2 @@
+# Exclude the example notebook from language stats without affecting the package
+fred_timeseries_toolkit/examples/usage_examples.ipynb linguist-documentation
