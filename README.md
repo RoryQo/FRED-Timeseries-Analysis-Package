@@ -92,6 +92,8 @@ In order to fetch data from the FRED database, you must obtain a free FRED API k
 Example usage:
 
 ```python
+from fredapi import Fred
+fred = Fred(api_key='your-api-key-here')
 fred_api_key = 'your-api-key-here'
 gdp = fetch_series('GDP', start_date='2010-01-01', api_key=fred_api_key)
 ```
