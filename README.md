@@ -1,5 +1,5 @@
 <h1 align="center">FRED Timeseries Analysis Package</h1> 
-
+ 
 <p align="center">
   <a href="https://pypi.org/project/fred-timeseries-toolkit/">
     <img src="https://img.shields.io/pypi/v/fred-timeseries-toolkit?label=PyPI&logo=pypi&logoColor=white&color=blue" alt="PyPI version">
