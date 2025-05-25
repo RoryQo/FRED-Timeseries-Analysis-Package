@@ -104,9 +104,9 @@ gdp = fetch_series('GDP', start_date='2010-01-01', api_key=fred_api_key)
 ```
 FRED-Timeseries-Analysis-Package/
 │
-├── timeseries_toolkit/        <- the code folder (same name as PyPI project)
+├── fred_quincast/        <- the code folder (same name as PyPI project)
 │   ├── __init__.py             <- makes it a package
-│   ├── ts_toolkit.py         <- (check_stationarity, check_stationarity_diff)
+│   ├── ts.py         <- (check_stationarity, check_stationarity_diff)
 
 │
 ├── examples/                  <- Jupyter notebooks showing usage
@@ -123,7 +123,7 @@ FRED-Timeseries-Analysis-Package/
 You can install the package directly from PyPI:
 
 ```python
-pip install fred-timeseries-toolkit
+pip install fred-quincast
 ```
 Or install it from the GitHub repository:
 
@@ -176,7 +176,7 @@ fred = Fred(api_key='your-api-key-here')
 ### `Import`
 
 ```python
-from fred_timeseries_toolkit.ts_toolkit import (
+from fred_quincast.ts import (
     fetch_series,
     resample_series,
     log_diff,
