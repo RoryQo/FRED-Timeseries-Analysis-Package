@@ -1,4 +1,4 @@
-<h1 align="center">FRED Timeseries Analysis Package</h1>
+<h1 align="center">FRED Timeseries Analysis Package</h1> 
 
 <p align="center">
   <a href="https://pypi.org/project/fred-timeseries-toolkit/">
