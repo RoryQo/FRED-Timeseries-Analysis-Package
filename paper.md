@@ -25,11 +25,11 @@ nocite: |
 
 # Summary
 
-FredQuinCast is a time-series analysis package that streamlines exploratory time-series analysis with The Federal Reserve Economic Data (FRED) by automating routine tasks, including stationarity testing, grid searching for optimal ARIMA and SARIMA models, and assessing the ARIMA and SARIMA model fit. This package includes model stability checks, automatic model selection, and Jupyter-optimized outputs, ensuring its efficiency and rigor for exploratory analyses in macroeconomic research.
+FredQuincast is a time-series analysis package that streamlines exploratory time-series analysis with The Federal Reserve Economic Data (FRED) by automating routine tasks, including stationarity testing, grid searching for optimal ARIMA and SARIMA models, and assessing the ARIMA and SARIMA model fit. This package includes model stability checks, automatic model selection, and Jupyter-optimized outputs, ensuring its efficiency and rigor for exploratory analyses in macroeconomic research.
 
 # Statement of need
 
-Time-series analyses are fundamental to macroeconomic research. FRED provides publicly available macroeconomic indicator data. While current packages, such as StatsModels, contain time-series analysis functions, and the Fredapi package allows users to download and import data from FRED easily, the FredQuinCast package goes a step further by integrating and automating the two components. By streamlining exploratory time-series tasks, such as stationarity testing, model selection, and basic forecasting, this package helps macroeconomic researchers save time on routine tasks and enhance workflow reproducibility.
+Time-series analyses are fundamental to macroeconomic research. FRED provides publicly available macroeconomic indicator data. While current packages, such as StatsModels, contain time-series analysis functions, and the Fredapi package allows users to download and import data from FRED easily, the FredQuincast package goes a step further by integrating and automating the two components. By streamlining exploratory time-series tasks, such as stationarity testing, model selection, and basic forecasting, this package helps macroeconomic researchers save time on routine tasks and enhance workflow reproducibility.
 
 # Acknowledgments
 
