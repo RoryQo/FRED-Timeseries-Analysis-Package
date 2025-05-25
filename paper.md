@@ -1,5 +1,5 @@
 ---
-title: 'FRED Timeseries Toolkit: Automating Economic Time Series Analysis and Forecasting in Python'
+title: 'FRED Quincast: Automating Economic Time Series Analysis and Forecasting in Python'
 tags:
   - Python 
   - Time Series
@@ -25,7 +25,7 @@ nocite: |
 
 # Summary
 
-The Federal Reserve Economic Data (FRED)  Timeseries Analysis Package streamlines exploratory time- series analysis by automating routine tasks, including stationarity testing, grid searching for optimal ARIMA and SARIMA models, and assessing the ARIMA and SARIMA model fit. This package includes model stability checks, automatic model selection, and Jupyter-optimized outputs, ensuring its efficiency and rigor  for exploratory analyses in macroeconomic research.
+The Federal Reserve Economic Data (FRED)  Timeseries Analysis Package streamlines exploratory time-series analysis by automating routine tasks, including stationarity testing, grid searching for optimal ARIMA and SARIMA models, and assessing the ARIMA and SARIMA model fit. This package includes model stability checks, automatic model selection, and Jupyter-optimized outputs, ensuring its efficiency and rigor  for exploratory analyses in macroeconomic research.
 
 # Statement of need
 
