@@ -2,7 +2,7 @@
  
 <p align="center">
   <a href="https://pypi.org/project/fred-quincast/">
-    <img src="https://img.shields.io/pypi/v/fred-quincast?label=PyPI&logo=pypi&logoColor=white&color=blue" alt="PyPI version">
+    <img src="https://img.shields.io/pypi/v/fred-quincast?label=PyPI&logo=pypi&logoColor=white&color=brightgreen" alt="PyPI version">
   </a>
 </p>
 
