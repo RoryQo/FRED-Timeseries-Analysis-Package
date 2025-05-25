@@ -6,7 +6,7 @@ from statsmodels.tools.sm_exceptions import ValueWarning
 # Suppress harmless statsmodels warnings about missing frequency
 warnings.simplefilter("ignore", ValueWarning)
 
-from .ts_toolkit import (
+from .ts import (
     in_notebook,
     fetch_series,
     resample_series,
