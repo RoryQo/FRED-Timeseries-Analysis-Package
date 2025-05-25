@@ -1,8 +1,8 @@
 name: Publish Python Package with Trusted Publishing
 
- on:
-    push:
-      branches:
+on:
+   push:
+     branches:
         - main
 
 jobs:
