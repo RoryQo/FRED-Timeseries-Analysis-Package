@@ -33,7 +33,7 @@ Time-series analyses are fundamental to macroeconomic research. FRED provides pu
 
 # Acknowledgments
 
-We thank Editage (https://editage.com) for English language editing support.
+We gratefully acknowledge the Federal Reserve Bank of St. Louis for its commitment to providing credible and publicly accessible data. We also thank the developers of Statsmodels, Pandas, and Matplotlib, as these packages form the foundation of FredQuincast. Finally, we thank Editage for English language editing support.
 \clearpage
 
 # References
