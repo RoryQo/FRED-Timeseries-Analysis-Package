@@ -25,7 +25,7 @@ nocite: |
 
 # Summary
 
-FredQuincast is a time-series analysis package that streamlines exploratory time-series analysis with The Federal Reserve Economic Data (FRED) by automating routine tasks, including stationarity testing, grid searching for optimal ARIMA and SARIMA models, assessing the ARIMA and SARIMA model fit, and quick forecasting. This package includes automated model stability checks, model selection, and Jupyter-optimized outputs, ensuring its efficiency and rigor for exploratory analyses in macroeconomic research.
+FredQuincast is a time-series analysis package that streamlines exploratory time-series analysis with The Federal Reserve Economic Data (FRED) by automating routine tasks, including stationarity testing, grid searching for optimal ARIMA and SARIMA models, assessing the ARIMA and SARIMA model fit, and quick forecasting. This package includes automated model stability checks and model selection, along with Jupyter-optimized outputs, ensuring its efficiency and rigor for exploratory analyses in macroeconomic research.
 
 # Statement of need
 
