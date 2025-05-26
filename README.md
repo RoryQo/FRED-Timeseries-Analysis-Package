@@ -1,4 +1,4 @@
-<h1 align="center">FredQuinCast: A Python Package for Time Series Analysis with FRED</h1>  
+<h1 align="center">Fred-Quincast: A Python Package for Time Series Analysis with FRED</h1>  
  
 <p align="center">
   <a href="https://pypi.org/project/fred-quincast/">
@@ -64,7 +64,7 @@
 
 
 
-**FRED-Timeseries-Analysis-Package** is a Python package for fetching, analyzing, and forecasting economic time series data, built on top of [FRED](https://fred.stlouisfed.org/), `pandas`, and `statsmodels`.
+**Fred-Quincast** is a Python package for fetching, analyzing, and forecasting economic time series data, built on top of [FRED](https://fred.stlouisfed.org/), `pandas`, and `statsmodels`.
 
 It includes:
 - Data fetching and resampling
