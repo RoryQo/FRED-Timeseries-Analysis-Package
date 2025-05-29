@@ -4,11 +4,11 @@
   <a href="https://pypi.org/project/fred-quincast/">
     <img src="https://img.shields.io/pypi/v/fred-quincast?label=PyPI&logo=pypi&logoColor=white&color=brightgreen" alt="PyPI version">
   </a>
+  <a href="https://joss.theoj.org/papers/77e26f3990574c7eb9d7dceb60417d56">
+    <img src="https://joss.theoj.org/papers/77e26f3990574c7eb9d7dceb60417d56/status.svg" alt="JOSS Status">
+  </a>
 </p>
 
-<p align="center">
-  <em>This package is currently under consideration for publication in the <a href="https://joss.theoj.org/">Journal of Open Source Software (JOSS)</a>.</em>
-</p>
 
 <table align="center">
   <tr>
