@@ -4,10 +4,7 @@
   <a href="https://pypi.org/project/fred-quincast/">
     <img src="https://img.shields.io/pypi/v/fred-quincast?label=PyPI&logo=pypi&logoColor=white&color=brightgreen" alt="PyPI version">
   </a>
-  <a href="https://joss.theoj.org/papers/77e26f3990574c7eb9d7dceb60417d56">
-    <img src="https://joss.theoj.org/papers/77e26f3990574c7eb9d7dceb60417d56/status.svg" alt="JOSS Status">
-  </a>
-</p>
+
 
 
 <table align="center">
