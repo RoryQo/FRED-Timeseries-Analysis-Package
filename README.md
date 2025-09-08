@@ -5,7 +5,7 @@
     <img src="https://img.shields.io/pypi/v/fred-quincast?label=PyPI&logo=pypi&logoColor=white&color=blue" alt="PyPI version">
   </a>
  
-
+ 
 
 <table align="center">
   <tr>
