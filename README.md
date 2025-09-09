@@ -1,7 +1,7 @@
 <h1 align="center">Fred-Quincast: A Python Package for Time Series Analysis with FRED</h1>  
  
 <p align="center">
-  <a href="https://pypi.org/project/fred-quincast/">
+  <a href="https://pypi.org/project/fred-quincast/"> 
     <img src="https://img.shields.io/pypi/v/fred-quincast?label=PyPI&logo=pypi&logoColor=white&color=blue" alt="PyPI version">
   </a>
  
