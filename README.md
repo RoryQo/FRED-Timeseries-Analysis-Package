@@ -102,7 +102,7 @@ gdp = fetch_series('GDP', start_date='2010-01-01', api_key=fred_api_key)
 FRED-Timeseries-Analysis-Package/
 │
 ├── fred_quincast/        <- the code folder (same name as PyPI project)
-│   ├── __init__.py             <- makes it a package
+│   ├── __init__.py             <- (for packaging)
 │   ├── ts.py         <- (check_stationarity, check_stationarity_diff)
 
 │
